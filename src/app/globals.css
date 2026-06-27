@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-jakarta: "Plus Jakarta Sans", system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-white text-navy antialiased;
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-8;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+  .btn-primary {
+    @apply btn bg-electric text-white hover:bg-navy focus:ring-electric;
+  }
+  .btn-accent {
+    @apply btn bg-lime text-navy hover:bg-lime-dark hover:text-white focus:ring-lime;
+  }
+  .btn-outline {
+    @apply btn border-2 border-white/70 text-white hover:bg-white hover:text-navy;
+  }
+  .btn-ghost {
+    @apply btn border-2 border-navy/15 text-navy hover:border-electric hover:text-electric;
+  }
+
+  .label {
+    @apply mb-1.5 block text-sm font-medium text-navy/80;
+  }
+  .input {
+    @apply w-full rounded-xl border border-navy/15 bg-white px-4 py-3 text-sm text-navy outline-none transition focus:border-electric focus:ring-2 focus:ring-electric/20 placeholder:text-navy/40;
+  }
+  .card {
+    @apply rounded-2xl border border-navy/10 bg-white shadow-sm transition hover:shadow-xl;
+  }
+  .badge {
+    @apply inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold;
+  }
+  .section-title {
+    @apply text-3xl font-extrabold tracking-tight text-navy sm:text-4xl;
+  }
+  .eyebrow {
+    @apply text-sm font-bold uppercase tracking-[0.2em] text-electric;
+  }
+}
+
+/* Hide scrollbar for testimonial / fleet carousels */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
